@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.appButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.appButton:hover {
+    background-color: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+}
+#buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#searchInput,
+#searchButton,
+#scanButton {
+    margin: 0 10px;
+}
+
+
+#results {
+    margin: 20px 0;
+}
+
+#foodTable, #totalsTable {
+    width: 100%;
+    text-align: left;
+    margin-top: 50px;
+}
+
+#foodTable th, #totalsTable th {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+#foodTable td, #totalsTable td {
+    padding: 10px;
+}
+
+#foodTable {
+    margin-top: 70px;
+    width: 100%;
+}
+
+#foodTable th:nth-child(1),
+#foodTable td:nth-child(1) {
+    width: 40%;
+}
+
+#foodTable th:nth-child(n+2),
+#foodTable td:nth-child(n+2) {
+    width: calc(60% / 4);
+}
+#totalsTable {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#totalsTable th:nth-child(1),
+#totalsTable td:nth-child(1) {
+    width: 10%;
+}
+
+#totalsTable th:nth-child(n+2),
+#totalsTable td:nth-child(n+2) {
+    width: calc(90% / 4);
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

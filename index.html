@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Calorie Tracker</h1>
+      <div id="buttonWrapper">
+        <button class="appButton" id="scanButton">Scan Barcode</button>
+        <button class="appButton" id="searchButton">Search</button>
+        <input id="searchInput" type="text" placeholder="Search for food" />
+      </div>
+      <div id="results"></div>
+      <table id="totalsTable">
+        <tr>
+          <th>Totals: <span id="totalSec"></span></th>
+          <th>Calories: <span id="totalCalories"></span></th>
+          <th>Protein: <span id="totalProtein"></span></th>
+          <th>Fats: <span id="totalFats"></span></th>
+          <th>Carbs: <span id="totalCarbs"></span></th>
+        </tr>
+      </table>
+      <table id="foodTable">
+        <tr>
+          <th>Food Entry:</th>
+          <th>Calories:</th>
+          <th>Protein:</th>
+          <th>Fats:</th>
+          <th>Carbs:</th>
+        </tr>
+      </table>
+      <div id="food-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Search Results:</h2>
+          <div id="food-name"></div>
+          <p id="food-calories"></p>
+          <button id="add-to-diary">Add to diary</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
