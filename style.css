@@ -71,7 +71,7 @@ h1 {
 }
 
 #foodTable {
-    margin-top: 70px;
+    margin-top: 0;
     width: 100%;
 }
 
@@ -136,4 +136,40 @@ h1 {
     text-decoration: none;
     cursor: pointer;
   }
-  
+  #staticFoodTable {
+    width: 100%;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#staticFoodTable th,
+#staticFoodTable td {
+    padding: 10px;
+}
+
+#staticFoodTable th:nth-child(1),
+#staticFoodTable td:nth-child(1) {
+    width: 40%;
+}
+
+#staticFoodTable th:nth-child(n+2),
+#staticFoodTable td:nth-child(n+2) {
+    width: calc(60% / 4);
+}
+
+#staticFoodTable th,
+#staticFoodTable td {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+#staticFoodTable th:nth-child(1),
+#staticFoodTable td:nth-child(1) {
+    width: 40%;
+}
+
+#staticFoodTable th:nth-child(n+2),
+#staticFoodTable td:nth-child(n+2) {
+    width: calc(60% / 4);
+}

@@ -23,14 +23,33 @@
           <th>Carbs: <span id="totalCarbs"></span></th>
         </tr>
       </table>
+      <table id="staticFoodTable">
+        <thead>
+          <tr>
+            <th>Food Entry:</th>
+            <th>Calories:</th>
+            <th>Protein:</th>
+            <th>Fats:</th>
+            <th>Carbs:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Static rows without data -->
+        </tbody>
+      </table>
       <table id="foodTable">
-        <tr>
-          <th>Food Entry:</th>
-          <th>Calories:</th>
-          <th>Protein:</th>
-          <th>Fats:</th>
-          <th>Carbs:</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Food Entry:</th>
+            <th>Calories:</th>
+            <th>Protein:</th>
+            <th>Fats:</th>
+            <th>Carbs:</th>
+          </tr>
+        </thead>
+        <tbody id="foodEntries">
+          <!-- food entries will be added here by JavaScript -->
+        </tbody>
       </table>
       <div id="food-modal" class="modal">
         <div class="modal-content">
