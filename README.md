@@ -7,6 +7,7 @@ Welcome to the Ego Quest frontend repository. Ego Quest is a calorie tracking ap
 Ego Quest is an application that allows users to track their daily caloric intake. Users can search for foods, view their nutritional information, and add them to their daily log. The frontend of Ego Quest provides a simple and intuitive interface for these interactions, and communicates with the backend to store and retrieve user data and food entries.
 
 ## Wireframes
+<img width="830" alt="Screenshot 2023-06-06 at 3 43 43 PM" src="https://github.com/rodriguezdevin24/Ego-Quest-Front-End/assets/131619471/3923b632-6d4d-4ff0-80be-121d32730b82">
 
 ## Technologies
 
