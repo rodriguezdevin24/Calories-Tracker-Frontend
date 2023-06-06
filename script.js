@@ -1,5 +1,7 @@
+
 const API_KEY = 'fDzBVQf9yQdHWsF4P3bBg8f2YyP50gQi0F1WL8Dn';
 const searchButton = document.getElementById('searchButton');
+const scanButton = document.getElementById('scanButton');
 const searchInput = document.getElementById('searchInput');
 const modal = document.getElementById('food-modal');
 const closeSpan = document.getElementsByClassName('close')[0];
@@ -7,8 +9,53 @@ const modalContent = document.querySelector('.modal-content');
 const addToDiaryButton = document.getElementById('add-to-diary');
 const foodTable = document.getElementById('foodTable'); 
 const foodEntries = document.getElementById('foodEntries');
+document.addEventListener('DOMContentLoaded', function() {
+  let isScannerRunning = false;
+// Initialize the barcode scanner
+window.onload = function() {
+  // Event handler for the "Scan Barcode" button
+  scanButton.onclick = function() {
+    if (!isScannerRunning) {
+    Quagga.init(
+      {
+        inputStream: {
+          name: "Live",
+          type: "LiveStream",
+          target: "#qr-reader",
+        },
+        decoder: {
+          readers: ["ean_reader"], // specify the barcode format you want to read
+        },
+      },
+      function(err) {
+        if (err) {
+          console.error("Error starting barcode scanner:", err);
+          return;
+        }
+        console.log("Barcode scanner started successfully.");
+        Quagga.start();
+        isScannerRunning = true;
+      }
+    );
+    }
+  };
+  document.addEventListener("click", function(event) {
+    const qrReader = document.getElementById("qr-reader");
+    if (!qrReader.contains(event.target) && isScannerRunning) {
+      Quagga.stop();
+      console.log("Barcode scanner stopped.");
+      isScannerRunning = false;
+      qrReader.style.display = "none";
+    }
+  });
+};
+});
 
 // When the user clicks on the button, open the modal 
+
+
+
+
 searchButton.onclick = function() {
   modal.style.display = "block";
   searchForFood(searchInput.value);
@@ -185,22 +232,9 @@ async function displayTotals() {
   }
 }
 
-// async function deleteEntry(id) {
-//   try {
-//     await axios.delete(`https://ego-quest.herokuapp.com/users/647819fceee9cc64b271b635/food-entries/${id}`);
-//     const row = document.getElementById(`entry-${id}`);
-//     if (row) {
-//       row.remove(); // remove the deleted entry from the table
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
 
 // Call displayFoodEntries on page load to show all entries
 displayFoodEntries();
 window.onload = displayTotals;
-
 
 

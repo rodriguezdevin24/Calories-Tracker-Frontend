@@ -4,6 +4,7 @@
     <title>Calorie Tracker</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/quagga"></script>
   </head>
   <body>
     <div id="app">
@@ -60,6 +61,9 @@
           <button id="add-to-diary">Add to diary</button>
         </div>
       </div>
+    </div>
+    <div id = "qr-reader">
+      <canvas id="qr-canvas" willReadFrequently> </canvas>
     </div>
     <script src="script.js"></script>
   </body>
