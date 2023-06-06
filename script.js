@@ -235,6 +235,6 @@ async function displayTotals() {
 
 // Call displayFoodEntries on page load to show all entries
 displayFoodEntries();
-window.onload = displayTotals;
+displayTotals();
 
 
