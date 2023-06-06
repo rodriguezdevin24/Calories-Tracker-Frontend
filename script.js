@@ -93,6 +93,7 @@ async function addToDiary(foodName, foodItemId) {
       user: userId
     });
     displayFoodEntries();
+    await displayTotals();
   } catch (error) {
     console.error(error);
   }
@@ -122,6 +123,7 @@ async function displayFoodEntries() {
     console.error(error);
   }
 }
+
 async function deleteEntry(id) {
   try {
     await axios.delete(`https://ego-quest.herokuapp.com/users/647819fceee9cc64b271b635/food-entries/${id}`);
@@ -129,13 +131,76 @@ async function deleteEntry(id) {
     if (row) {
       row.remove(); // remove the deleted entry from the table
     }
+    // After deleting an entry, re-fetch all entries and update the totals
+    await displayFoodEntries();
+    await displayTotals(); // This is a new function you'll create to calculate and display the totals
   } catch (error) {
     console.error(error);
   }
 }
 
+async function displayTotals() {
+  // Fetch all entries
+  const response = await axios.get('https://ego-quest.herokuapp.com/users/647819fceee9cc64b271b635/food-entries');
+  const entries = response.data;
+
+  // Calculate totals
+  let totalCalories = 0;
+  let totalProtein = 0;
+  let totalFats = 0;
+  let totalCarbs = 0;
+  entries.forEach(entry => {
+    totalCalories += entry.calories;
+    totalProtein += entry.protein;
+    totalFats += entry.fats;
+    totalCarbs += entry.carbs;
+  });
+  totalCalories = Math.round(totalCalories);
+  totalProtein = Math.round(totalProtein);
+  totalFats = Math.round(totalFats);
+  totalCarbs = Math.round(totalCarbs);
+
+  // Update totals in the table
+  const totalsRow = document.getElementById('totalsRow');
+  if (totalsRow) {
+    totalsRow.innerHTML = `
+      <td>Totals</td>
+      <td>${totalCalories}</td>
+      <td>${totalProtein}</td>
+      <td>${totalFats}</td>
+      <td>${totalCarbs}</td>
+    `;
+  } else {
+    // If the totals row doesn't exist yet, create it
+    const newTotalsRow = document.createElement('tr');
+    newTotalsRow.id = 'totalsRow';
+    newTotalsRow.innerHTML = `
+      <td>Totals</td>
+      <td>${totalCalories}</td>
+      <td>${totalProtein}</td>
+      <td>${totalFats}</td>
+      <td>${totalCarbs}</td>
+    `;
+    totalsTable.appendChild(newTotalsRow);
+  }
+}
+
+// async function deleteEntry(id) {
+//   try {
+//     await axios.delete(`https://ego-quest.herokuapp.com/users/647819fceee9cc64b271b635/food-entries/${id}`);
+//     const row = document.getElementById(`entry-${id}`);
+//     if (row) {
+//       row.remove(); // remove the deleted entry from the table
+//     }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
 
 // Call displayFoodEntries on page load to show all entries
 displayFoodEntries();
+window.onload = displayTotals;
+
 
 
