@@ -32,7 +32,7 @@ This application makes use of the USDA Food Database API to provide data about n
 
 ## Deployment
 
-Our frontend is deployed on Netlify and can be accessed at the following link: (https://lively-cactus-6ed07e.netlify.app/)
+Our frontend is deployed on Netlify and can be accessed at the following link: https://lively-cactus-6ed07e.netlify.app/
 
 Please note that the frontend and backend are hosted in separate repositories. You can find the backend repository and its respective README at the following link: *Add your backend GitHub repository link here*.
 
