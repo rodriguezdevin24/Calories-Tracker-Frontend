@@ -20,7 +20,7 @@ h1 {
 
 .appButton {
     display: inline-block;
-    margin: 10px;
+    margin: 50px;
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
@@ -62,7 +62,7 @@ h1 {
 #results {
     margin: 20px 0;
 }
-#foodTable, #totalsTable, #staticFoodTable {
+ #totalsTable {
     width: 100%;
     text-align: left;
     margin-top: 50px;
@@ -78,7 +78,7 @@ h1 {
 }
 
 #foodTable td, #totalsTable td {
-    padding: 10px;
+    padding: 9px;
 }
 
 #foodTable th:nth-child(1), #foodTable td:nth-child(1), /* Edit button */
@@ -90,8 +90,8 @@ h1 {
 
 #foodTable th:nth-child(2), #foodTable td:nth-child(2), /* Food Entries */
 #staticFoodTable th:nth-child(2), #staticFoodTable td:nth-child(2) {
-    width: 32% !important; /* 3.2fr equivalent */
-    padding-left: 9px !important;
+    width: 32%; /* 3.2fr equivalent */
+    padding-left: 9px ;
 
 
 }
@@ -111,51 +111,15 @@ h1 {
 
 
 
- /* #foodTable {
-    margin-top: 0;
-    width: 100%;
-}
-
-#foodTable th:nth-child(1),
-#foodTable td:nth-child(1) {
-    width: 40%;
-}
-
-#foodTable th:nth-child(n+2),
-#foodTable td:nth-child(n+2) {
-    width: calc(60% / 4);
-}
-#staticFoodTable th,
-#staticFoodTable td {
-    padding: 10px;
-}
-
-#staticFoodTable th:nth-child(1),
-#staticFoodTable td:nth-child(1) {
-    width: 40%;
-}
-
-#staticFoodTable th:nth-child(n+2),
-#staticFoodTable td:nth-child(n+2) {
-    width: calc(60% / 4);
-}
+ 
 
 #staticFoodTable th,
 #staticFoodTable td {
     padding: 10px;
     background-color: #f8f8f8;
+    padding-right: 15px;
 }
 
-#staticFoodTable th:nth-child(1),
-#staticFoodTable td:nth-child(1) {
-    width: 40%;
-}
-
-#staticFoodTable th:nth-child(n+2),
-#staticFoodTable td:nth-child(n+2) {
-    width: calc(60% / 4);
-} 
-  */
 
 
 
@@ -217,12 +181,12 @@ h1 {
   }
 
 
-/* 
+
   #staticFoodTable {
     width: 100%;
     text-align: left;
     margin-top: 50px;
-    margin-bottom: 10px;
-}  */
-
-
+}  
+#foodTable {
+    margin-top: 10px;
+}
