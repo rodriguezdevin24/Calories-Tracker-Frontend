@@ -9,6 +9,10 @@ const modalContent = document.querySelector(".modal-content");
 const addToDiaryButton = document.getElementById("add-to-diary");
 const foodTable = document.getElementById("foodTable");
 const foodEntries = document.getElementById("foodEntries");
+const bmrButton = document.getElementById('bmrButton'); 
+const bmrModal = document.getElementById('bmrModal');
+const bmrClose = document.querySelector('#bmrModal .close');
+
 
 
 let searchInpuValue = "";
@@ -56,6 +60,26 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
+bmrButton.onclick = function() {
+  bmrModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+bmrClose.onclick = function() {
+  bmrModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == bmrModal) {
+      bmrModal.style.display = "none";
+  }
+}
+
+
+
+
+
 
 const originalModalHTML = modalContent.innerHTML;
 // When the user clicks on the button, open the modal
@@ -78,6 +102,7 @@ window.onclick = function (event) {
     resetModal();
     }
   };
+
 
 
 async function searchForFood(query) {
@@ -175,7 +200,7 @@ async function addToDiary(foodName, foodItemId) {
         {
           foodName,
           foodItemId,
-          user: userId,
+          user: userId , 
         }
       );
       currentEditId = null;

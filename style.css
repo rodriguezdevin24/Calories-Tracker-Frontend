@@ -5,7 +5,7 @@ body {
 }
 
 #app {
-    max-width: 800px;
+    max-width: 800px ; 
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -31,6 +31,8 @@ h1 {
     font-size: 16px;
     transition-duration: 0.4s;
     cursor: pointer;
+    width: 170px;
+    height: 60px;
 }
 
 .appButton:hover {
@@ -45,20 +47,29 @@ h1 {
 }
 
 #searchInput,
-#searchButton,
-#scanButton {
+#searchModal,
+#scanButton,
+#bmrButton {
     margin: 0 10px;
 }
-
-
+#searchInput {
+    height:30px;
+}
+#searchButton {
+    height: 35px;
+    width: 100px;
+}
 #results {
     margin: 20px 0;
 }
-
-#foodTable, #totalsTable {
+#foodTable, #totalsTable, #staticFoodTable {
     width: 100%;
     text-align: left;
     margin-top: 50px;
+    box-sizing: border-box;
+}
+#totalsTable {
+    width: 100%;
 }
 
 #foodTable th, #totalsTable th {
@@ -70,7 +81,37 @@ h1 {
     padding: 10px;
 }
 
-#foodTable {
+#foodTable th:nth-child(1), #foodTable td:nth-child(1), /* Edit button */
+#foodTable th:nth-child(7), #foodTable td:nth-child(7), /* Last column */
+#staticFoodTable th:nth-child(1), #staticFoodTable td:nth-child(1),
+#staticFoodTable th:nth-child(7), #staticFoodTable td:nth-child(7) {
+    width: 5%; /* 0.5fr equivalent */
+}
+
+#foodTable th:nth-child(2), #foodTable td:nth-child(2), /* Food Entries */
+#staticFoodTable th:nth-child(2), #staticFoodTable td:nth-child(2) {
+    width: 32% !important; /* 3.2fr equivalent */
+    padding-left: 9px !important;
+
+
+}
+
+#foodTable th:nth-child(n+3):nth-child(-n+6), /* Other columns */
+#foodTable td:nth-child(n+3):nth-child(-n+6),
+#staticFoodTable th:nth-child(n+3):nth-child(-n+6),
+#staticFoodTable td:nth-child(n+3):nth-child(-n+6) {
+    width: 11%; /* 0.8fr equivalent */
+    padding-right: 3px;
+}
+
+
+
+
+
+
+
+
+ /* #foodTable {
     margin-top: 0;
     width: 100%;
 }
@@ -84,6 +125,44 @@ h1 {
 #foodTable td:nth-child(n+2) {
     width: calc(60% / 4);
 }
+#staticFoodTable th,
+#staticFoodTable td {
+    padding: 10px;
+}
+
+#staticFoodTable th:nth-child(1),
+#staticFoodTable td:nth-child(1) {
+    width: 40%;
+}
+
+#staticFoodTable th:nth-child(n+2),
+#staticFoodTable td:nth-child(n+2) {
+    width: calc(60% / 4);
+}
+
+#staticFoodTable th,
+#staticFoodTable td {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+#staticFoodTable th:nth-child(1),
+#staticFoodTable td:nth-child(1) {
+    width: 40%;
+}
+
+#staticFoodTable th:nth-child(n+2),
+#staticFoodTable td:nth-child(n+2) {
+    width: calc(60% / 4);
+} 
+  */
+
+
+
+
+
+
+
 #totalsTable {
     width: 100%;
     margin-top: 20px;
@@ -119,7 +198,7 @@ h1 {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
   }
   
   /* The Close Button */
@@ -136,40 +215,14 @@ h1 {
     text-decoration: none;
     cursor: pointer;
   }
+
+
+/* 
   #staticFoodTable {
     width: 100%;
     text-align: left;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-bottom: 10px;
-}
+}  */
 
-#staticFoodTable th,
-#staticFoodTable td {
-    padding: 10px;
-}
 
-#staticFoodTable th:nth-child(1),
-#staticFoodTable td:nth-child(1) {
-    width: 40%;
-}
-
-#staticFoodTable th:nth-child(n+2),
-#staticFoodTable td:nth-child(n+2) {
-    width: calc(60% / 4);
-}
-
-#staticFoodTable th,
-#staticFoodTable td {
-    padding: 10px;
-    background-color: #f8f8f8;
-}
-
-#staticFoodTable th:nth-child(1),
-#staticFoodTable td:nth-child(1) {
-    width: 40%;
-}
-
-#staticFoodTable th:nth-child(n+2),
-#staticFoodTable td:nth-child(n+2) {
-    width: calc(60% / 4);
-}
